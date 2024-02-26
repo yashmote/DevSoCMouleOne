@@ -1,74 +1,248 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    user-select: none;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    margin: 0px auto;
+    padding: 0px;
+    overflow-y: hidden;
+    width: 680px;
 }
 
-.container {
+.sic-fi {
+    position: absolute;
+    width: 327px;
+    height: 580px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    background: #55636E;
+    border-radius: 5px/ 50px;
+}
+
+
+
+@keyframes form{
+    0%{
+        transform: translateY(0px);
+    }
+    60%{
+        transform: translateY(-40%);
+    }
+    70%, 90%{
+        transform: translateX(50%) translateY(0px);
+    }
+    100%{
+        transform:translateX(60%) translateY(0px) ;
+    }
+}
+
+
+.input-text-wrapper {
+    width: 95%;
+    height: 30%;
+    border: solid;
+    margin: auto;
+    background: #050911;
+    border-radius: 10px 10px 10px 10px/ 5px 5px 120px 120px;
     position: relative;
-    max-width:25vw;
-    width: 100%;
-    border-radius: 10%;
-    padding: 10px 20px 20px;
-    background: #fff;
 }
 
-.display {
-    height: 80px;
-    width: 100%;
-    outline: none;
-    border: none;
-    text-align: right;
-    margin-bottom: 10px;
-    font-size: 25px;
-    color: black;
-}
-
-.buttons {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(4 , 1fr);
-}
-
-.buttons button {
-    padding: 10px;
-    border-radius: 40%;
-    border: white 1px solid;
+.input-text-wrapper>input {
+    position: absolute;
+    bottom: 10px;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 20px;
+    padding: 35px 10px 5px 10px;
+    border: none;
+    outline: none;
+    background: #DDE4C3;
+    border-radius: 4px 4px 2px 2px;
+    user-select: none;
+    pointer-events: none;
+    text-align: right;
+}
+
+.input-text-wrapper > .input-result-show{
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    bottom: 37px;
+    font-size: 30px;
+    z-index: 3;
+    color: black;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.input-err {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background: #2C2C2C;
+    right: 20px;
+    top: 20px;
+    overflow: hidden;
+}
+
+.input-err::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    border: solid black 1px;
+    right: 30px;
+    top: -1px;
+}
+
+.input-text-wrapper h2 {
+    color: white;
+    position: absolute;
+    left: 5px;
+    font-weight: 200;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.fnc-control {
+    margin: 20px 20px 10px 20px;
+
+
+}
+
+.fnc-control button {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #FEFEEA;
+    color: white;
     cursor: pointer;
-    background:#eded30;
+    border-radius: 50px;
+    width: 37px;
+    height: 22px;
 }
 
-.operator {
-    color: rgb(106, 152, 250);
+.fnc-control button:nth-of-type(1) {
+    transform: rotate(8deg) translateX(-30px);
+    box-shadow: -1px 3px 1px black;
+
+
+
 }
 
-@media screen and (max-width: 900px) {
-    .container {
-        max-width: 30%;
-    }
+.fnc-control button:nth-of-type(2) {
+    transform: rotate(4deg) translateX(-20px);
+    box-shadow: -1px 3px 1px black;
+
+
+
 }
 
-@media screen and (max-width:800px) {
-    .container {
-        max-width: 40%;
-    }
+.fnc-control button:nth-of-type(4) {
+    transform: rotate(-4deg) translateX(20px);
+    box-shadow: 1px 3px 1px black;
+
+
+
+}
+
+.fnc-control button:nth-of-type(5) {
+    transform: rotate(-8deg) translateX(30px);
+    box-shadow: 1px 3px 1px black;
+}
+
+.fnc-control .thumb {
+    padding: 35px 42px;
+    margin-bottom: -30px;
+    border-radius: 40px / 30px;
+    box-shadow: -1px 4px 1px 1px black;
+
 }
 
 
-@media screen and (max-width: 600px) {
-    .container {
-        max-width: 80%;
-    }
+
+.fnc-wrapper {
+    margin: 0px 20px;
+}
+
+.fnc-wrapper button {
+    border: none;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 1px 1px 3px 3px;
+    font-size: 13px;
+    margin: 5px 2px;
+    background: #1A2430;
+    border-radius: 1px 1px 3px 3px;
+    color: white;
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.top-fnc {
+    overflow: hidden;
+}
+
+.top-fnc button {
+    box-shadow: 1px 2px 2px black;
+    border-radius: 4px;
+
+}
+
+.top-fnc-left {
+    float: right;
+    transform: translateX(-0px);
+}
+
+.top-fnc-left>button:nth-child(1) {
+    transform: translateX(0px) translateY(0px)
+}
+
+.top-fnc-left>button:nth-child(2) {
+    transform: translateY(-4px)
+}
+
+.btn-number-wrapper {
+    margin: 20px;
+}
+
+.btn-number-wrapper>button {
+    border: none;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #747E8A;
+    font-size: 18px;
+    color: white;
+    margin: 3px;
+    box-shadow: 1px 2px 2px black;
+    width: 48px;
+    height: 30px;
+
+}
+
+.btn-number-wrapper>button:active,
+.fnc-wrapper>button {
+    box-shadow: 1px 4px 4px black;
+
 }
